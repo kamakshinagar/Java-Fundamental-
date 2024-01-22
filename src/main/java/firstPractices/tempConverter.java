@@ -7,7 +7,7 @@ import static java.lang.System.out;
 
 public class tempConverter {
 
-    public static double ftoc(double c)
+    public static double fToc(double c)
     {
         return 5*(c-32)/9;
     }
@@ -24,7 +24,7 @@ public class tempConverter {
             }
             System.out.println("I read = " + line);
             double d = Double.parseDouble(line);
-            out.println("the converted temp in centigrade "+ ftoc(d));
+            out.println("the converted temp in centigrade "+ fToc(d));
 
 
         }
