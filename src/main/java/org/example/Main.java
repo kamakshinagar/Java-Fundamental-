@@ -1,6 +1,10 @@
 package org.example;
 
-import java.awt.desktop.SystemEventListener;
+
+import java.io.File;
+import java.io.FileReader;
+import java.util.Objects;
+import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -12,7 +16,7 @@ public class Main {
         result= a+b;
         return result;
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.println("Hello and welcome!");
@@ -37,9 +41,28 @@ public class Main {
         else{
             System.out.println("tiny!!!");
         }
-
-       int sum = myfunction(5,6);
+        // read from commnad prompt
+        /*Scanner input = new Scanner(System.in);
+        while(input.hasNextLine())
+        {
+            String line = input.nextLine();
+            System.out.println("I read = "+line);
+            if (Objects.equals(line, "quit"))
+            {
+                break;
+            }
+        }*/
+        //read from file 
+        Scanner inputFile = new Scanner(new File("/Users/knagar/Documents/java script practice/SF-Java-Fundamentals/src/main/java/org/example/textfile.txt"));
+        while(inputFile.hasNextLine())
+        {
+            String line = inputFile.nextLine();
+            System.out.println("I read = "+line);
+        }
+        int sum = myfunction(5,6);
         System.out.println("the sum of two numbers = "+ sum);
+
+
 
     }
 }
